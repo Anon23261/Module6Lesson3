@@ -1,0 +1,28 @@
+
+  summary: Add a new member
+  consumes:
+    - application/json
+  parameters:
+    - in: body
+      name: body
+      schema:
+        type: object
+        properties:
+          name:
+            type: string
+          email:
+            type: string
+          join_date:
+            type: string
+            format: date
+        required:
+          - name
+          - email
+          - join_date
+  responses:
+    201:
+      description: Member added successfully
+    400:
+      description: Validation error
+    500:
+      description: Internal server error
